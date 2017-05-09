@@ -5,6 +5,7 @@ author: danieldobalian
 ---
 
 # Node.js Web API with Azure AD v2.0
+This sample demonstrates how to protect a Node.js web API with Azure AD v2.0 using the Passport.js library. The code here is pre-configured with a registered client ID. If you register your own app, you will need to replace the client ID.
 
 ## Steps to Run
 
@@ -19,11 +20,14 @@ author: danieldobalian
 	```
 	npm install && npm update
 	```
-5. Run the Web API! By default it will run on `http://localhost:5000`.
+5. Run the Web API! By default it will run on `http://localhost:5000`
 
 	```
 	node index.js
 	```
+
+## Next Steps
+The `/hello` endpoint in this sample is protected so an authorized request to it requires an access token issued by Azure AD v2.0 in the header. You can [register your app](https://apps.dev.microsoft.com) and make authorized requests to this web API.
 
 ## Questions & Issues
 
