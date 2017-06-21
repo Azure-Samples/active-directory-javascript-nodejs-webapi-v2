@@ -1,7 +1,7 @@
 ---
 services: active-directory
 platforms: node.js
-author: danieldobalian
+author: navyasric
 ---
 
 # Node.js Web API with Azure AD v2.0
