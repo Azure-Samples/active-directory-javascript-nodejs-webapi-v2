@@ -31,7 +31,7 @@ The `/hello` endpoint in this sample is protected so an authorized request to it
 
 ## Questions & Issues
 
-Please file any questions or problems with the sample as a GitHub issue.  You can also post on Stackoverflow with the tag `azure-ad-b2c`. For OAuth2.0 library issues, please see note below. 
+Please file any questions or problems with the sample as a GitHub issue.  You can also post on Stackoverflow with the tag `azure-active-directory`. For OAuth2.0 library issues, please see note below. 
 
 # Contributing
 
