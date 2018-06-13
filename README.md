@@ -1,6 +1,6 @@
 ---
 services: active-directory
-platforms: node.js
+platforms: nodejs
 author: navyasric
 ---
 
