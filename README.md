@@ -27,7 +27,7 @@ This sample demonstrates how to protect a Node.js web API with Azure AD v2.0 usi
 	```
 
 ## Next Steps
-The `/hello` endpoint in this sample is protected so an authorized request to it requires an access token issued by Azure AD v2.0 in the header. You can [register your app](https://apps.dev.microsoft.com) and make authorized requests to this web API. Currently, the Azure AD v2.0 does not issue access tokens to a Web API that has a different Application ID than the client app. Make sure you add this Web API under the same Application ID as your app.
+The `/hello` endpoint in this sample is protected so an authorized request to it requires an access token issued by Azure AD v2.0 in the header. You can [register your app](https://go.microsoft.com/fwlink/?linkid=2083908) and make authorized requests to this web API. Currently, the Azure AD v2.0 does not issue access tokens to a Web API that has a different Application ID than the client app. Make sure you add this Web API under the same Application ID as your app.
 
 ## Questions & Issues
 
