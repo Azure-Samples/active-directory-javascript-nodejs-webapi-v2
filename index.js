@@ -1,41 +1,31 @@
-// Authors:
-// Shane Oatman https://github.com/shoatman
-// Sunil Bandla https://github.com/sunilbandla
-// Daniel Dobalian https://github.com/danieldobalian
+const express = require("express");
+const morgan = require("morgan");
+const passport = require("passport");
+const config = require('./apiConfig');
+const BearerStrategy = require('passport-azure-ad').BearerStrategy;
 
-var express = require("express");
-var morgan = require("morgan");
-var passport = require("passport");
-var BearerStrategy = require('passport-azure-ad').BearerStrategy;
-
-var options = {
-    identityMetadata: "https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration/",
-    clientID: "85327f73-fd44-46b9-a159-28544ff72288",
-    validateIssuer: false,
-    loggingLevel: 'warn',
-    passReqToCallback: false
-};
-
-// Check for client id placeholder
-if (options.clientID === 'YOUR_CLIENT_ID') {
+// Check for clientId placeholder
+if (config.clientID === 'YOUR_CLIENT_ID') {
     console.error("Please update 'options' with the client id (application id) of your application");
     return;
 }
 
-var bearerStrategy = new BearerStrategy(options,
-    function (token, done) {
+const bearerStrategy = new BearerStrategy(config, (token, done) => {
         // Send user info using the second argument
         done(null, {}, token);
     }
 );
 
-var app = express();
+const app = express();
+
 app.use(morgan('dev'));
 
 app.use(passport.initialize());
+
 passport.use(bearerStrategy);
 
-app.use(function (req, res, next) {
+// enable CORS
+app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Authorization, Origin, X-Requested-With, Content-Type, Accept");
     next();
@@ -43,16 +33,27 @@ app.use(function (req, res, next) {
 
 app.get("/hello",
     passport.authenticate('oauth-bearer', {session: false}),
-    function (req, res) {
-        var claims = req.authInfo;
+    (req, res) => {
         console.log('User info: ', req.user);
-        console.log('Validated claims: ', claims);
-        
-        res.status(200).json({'name': claims['name']});
+        console.log('Validated claims: ', req.authInfo);
+
+        if (claims['scp'].split(" ").indexOf("demo.read") >= 0) {
+            // Service relies on the name claim.  
+            res.status(200).json({
+                'request-for': 'access_token',
+                'name': req.authInfo['name'],
+                'issued-by': req.authInfo['iss'],
+                'issued-for': req.authInfo['aud'],
+                'scope': req.authInfo['scp']
+            });
+        } else {
+            console.log("Invalid Scope, 403");
+            res.status(403).json({'error': 'insufficient_scope'}); 
+        }
     }
 );
 
-var port = process.env.PORT || 5000;
-app.listen(port, function () {
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
     console.log("Listening on port " + port);
 });
