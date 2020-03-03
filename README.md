@@ -19,7 +19,7 @@ This sample demonstrates how to protect a Node.js web API with Azure AD v2.0 usi
 | File/folder       | Description                                |
 |-------------------|--------------------------------------------|
 | `AppCreationScripts`   | Contains automation scripts for Powershell users (can be safely removed if desired).|
-| `process.json`   | Contains sample source files.  |
+| `process.json`   | Contains configuration parameters for logging via Bunyan  |
 | `index.js`   | Main application logic resides here.                     |
 | `apiConfig.js`   | Contains configuration parameters for the sample. |
 | `.gitignore`      | Defines what to ignore at commit time.      |
@@ -30,7 +30,7 @@ This sample demonstrates how to protect a Node.js web API with Azure AD v2.0 usi
 | `package.json`    | Package manifest for npm.                   |
 | `README.md`       | This README file.                          |
 | `SECURITY.md`     | Security disclosures.                      |
-| `server.js`     | Implements a simple Node server to serve index.html.  |
+| `server.js`     | Implements a simple Node server to api endpoint(s)  |
 
 ## Steps to Run
 
