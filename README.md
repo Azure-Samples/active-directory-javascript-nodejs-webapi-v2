@@ -6,13 +6,31 @@ languages:
 products:
 - microsoft-identity-platform
 - azure-active-directory
-description: "A simple Node.js web API demonstrating how to secure and expose an API using Azure AD (w/ v2 endpoint)"
+description: "A sample demonstrating how to protect a Node.js web API with Azure AD v2.0 using the Passport.js library."
 urlFragment: "active-directory-javascript-nodejs-webapi-v2"
 ---
 
 # Node.js Web API with Azure AD v2.0
 
 This sample demonstrates how to protect a Node.js web API with Azure AD v2.0 using the Passport.js library. The code here is pre-configured with a registered client ID. If you register your own app, you will need to replace the client ID.
+
+## Contents
+
+| File/folder       | Description                                |
+|-------------------|--------------------------------------------|
+| `AppCreationScripts`   | Contains automation scripts for Powershell users (can be safely removed if desired).|
+| `process.json`   | Contains sample source files.  |
+| `index.js`   | Main application logic resides here.                     |
+| `apiConfig.js`   | Contains configuration parameters for the sample. |
+| `.gitignore`      | Defines what to ignore at commit time.      |
+| `CHANGELOG.md`    | List of changes to the sample.             |
+| `CODE_OF_CONDUCT.md` | Code of Conduct information.            |
+| `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
+| `LICENSE`         | The license for the sample.                |
+| `package.json`    | Package manifest for npm.                   |
+| `README.md`       | This README file.                          |
+| `SECURITY.md`     | Security disclosures.                      |
+| `server.js`     | Implements a simple Node server to serve index.html.  |
 
 ## Steps to Run
 
@@ -30,6 +48,11 @@ git clone https://github.com/Azure-Samples/active-directory-javascript-nodejs-we
 npm install && npm update
 ```
 
+4. Configure your environmental parameters:
+   1. Open `apiConfig.js`.
+   2. Replace the string "Enter_the_Application_Id_Here" with your app/client ID on AAD Portal.
+   3. Replace the string "Enter_the_Metadata_Endpoint_Here" with your OpenID Connect metadata document url on the AAD Portal.
+
 5. Run the Web API! By default it will run on `http://localhost:5000`
 
 ```console
@@ -38,23 +61,30 @@ npm start
 
 ## Next Steps
 
-The `/hello` endpoint in this sample is protected so an authorized request to it requires an access token issued by Azure AD v2.0 in the header. You can [register your app](https://go.microsoft.com/fwlink/?linkid=2083908) and make authorized requests to this web API.
+The `/hello` endpoint in this sample is protected so an authorized request to it requires an access token issued by Azure AD v2.0 in the header. In the rest, we will discuss how to protect and expose this API on Azure AD Portal.
+
+> **Note**: The application that is calling this web API also needs to be registered on Azure AD Portal and configured accordingly. Please refer to the documentation on how to [Configure a client application to access web APIs](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-configure-app-access-web-apis).
 
 ## Exposing your API
 
 Select the Expose an API section, and:
 
-1. Select Add a scope
-2. accept the proposed Application ID URI (api://{clientId}) by selecting Save and Continue
-3. Enter the following parameters
-4. for Scope name use access_as_user
-5. Keep Admins and users for Who can consent
-6. in Admin consent display name type Access TodoListService as a user
-7. in Admin consent description type Accesses the TodoListService Web API as a user
-8. in User consent display name type Access TodoListService as a user
-9. in User consent description type Accesses the TodoListService Web API as a user
-10. Keep State as Enabled
-11. Select Add scope
+1. [Register your application](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app) on Azure AD Portal.
+2. Make a note of your `clientID`.
+3. On the right side menu, select `Expose an API`.
+4. Select `Add a Scope`.
+5. Enter your scope information:
+   1. Name your scope as `demo.read`.
+   2. Under `Who can consent?` section, select `Admins and users`.
+   3. Fill `admin consent display name` and `admin consent description` as you like (this will appear on the consent screen to end users informing them what the API does).
+   4. Fill `user consent display name` and `user consent description` as you like (this will appear on the consent screen to end users informing them what the API does).
+   5. Under `state` section, select `Enabled` (this will add a state parameter to communication between the API and client app and is encouraged for security).
+6. Back on `Expose an API` page, click on `Add a client Application`.
+   1. Add the `Client ID` of the application that will call **this** web API.
+   2. Click on `Authorize scopes` checkbox, then click `Add application` on the bottom.
+7. You are all set. After you configure your client application, you will be able to call this web API.
+
+For more detailed instructions discussing the steps above, please refer to the document on how to [Configure an application to expose web APIs](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-configure-app-expose-web-apis).
 
 ## Questions & Issues
 

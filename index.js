@@ -31,17 +31,18 @@ app.use((req, res, next) => {
     next();
 });
 
+// API endpoint
 app.get("/hello",
     passport.authenticate('oauth-bearer', {session: false}),
     (req, res) => {
         console.log('User info: ', req.user);
         console.log('Validated claims: ', req.authInfo);
 
-        if (claims['scp'].split(" ").indexOf("demo.read") >= 0) {
+        if (req.authInfo['scp'].split(" ").indexOf("demo.read") >= 0) {
             // Service relies on the name claim.  
             res.status(200).json({
                 'request-for': 'access_token',
-                'name': req.authInfo['name'],
+                'requested-by': req.authInfo['name'],
                 'issued-by': req.authInfo['iss'],
                 'issued-for': req.authInfo['aud'],
                 'scope': req.authInfo['scp']

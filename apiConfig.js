@@ -1,7 +1,7 @@
 
 const config = {
-    identityMetadata: "https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration/",
-    clientID: "e9db6c6e-7afd-45f6-9221-1c2c949e5cdc",
+    identityMetadata: "https://login.microsoftonline.com/msaltestingjs.onmicrosoft.com",
+    clientID: "d1178633-a70b-4e8e-97f7-f6d24e9011b5",
     validateIssuer: false,
     loggingLevel: 'info',
     passReqToCallback: false

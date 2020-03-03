@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 2/25/2020
+## 3/03/2020
 
 * Dependencies updated.
 * Configuration parameters refactored.
