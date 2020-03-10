@@ -1,0 +1,37 @@
+{
+    "Sample": {
+      "Title": "A sample demonstrating how to protect a Node.js web API with Azure AD v2.0 using the Passport.js library.",
+      "Level": 200,
+      "Client": "Node.js Web App",
+      "Service": "Node.js Web Api",
+      "RepositoryUrl": "active-directory-javascript-nodejs-webapi-v2",
+      "Endpoint": "AAD v2.0"
+    },
+    "AADApps": [
+      {
+        "Id": "service",
+        "Name": "active-directory-javascript-nodejs-webapi-v2",
+        "Kind": "WebApi",
+        "HomePage": "http://localhost:5000/",
+        "ReplyUrls": "http://localhost:5000/",
+        "Audience": "AzureADMultipleOrgs"
+      }
+    ],
+    "CodeConfiguration": [
+      {
+        "App": "service",
+        "SettingKind": "Text",
+        "SettingFile": "\\..\\apiConfig.js",
+        "Mappings": [
+          {
+            "key": "clientID",
+            "value": ".AppId"
+          },
+          {
+            "key": "identityMetadata",
+            "value": "\"https://login.microsoftonline.com/\"+$tenantName"
+          }
+        ]
+      }
+    ]
+  }
