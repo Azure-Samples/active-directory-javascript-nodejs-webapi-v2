@@ -1,7 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const passport = require("passport");
-const config = require('./apiConfig');
+const config = require('./config');
 const BearerStrategy = require('passport-azure-ad').BearerStrategy;
 
 // Check for clientId placeholder

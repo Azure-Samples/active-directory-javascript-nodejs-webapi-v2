@@ -21,7 +21,7 @@
       {
         "App": "service",
         "SettingKind": "Text",
-        "SettingFile": "\\..\\apiConfig.js",
+        "SettingFile": "\\..\\config.js",
         "Mappings": [
           {
             "key": "clientID",
