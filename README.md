@@ -21,7 +21,7 @@ This sample demonstrates how to protect a Node.js web API with Azure AD v2.0 usi
 | `AppCreationScripts`   | Contains automation scripts for Powershell users (can be safely removed if desired).|
 | `process.json`   | Contains configuration parameters for logging via Bunyan.  |
 | `index.js`   | Main application logic resides here.                     |
-| `apiConfig.js`   | Contains configuration parameters for the sample. |
+| `config.js`   | Contains configuration parameters for the sample. |
 | `.gitignore`      | Defines what to ignore at commit time.      |
 | `CHANGELOG.md`    | List of changes to the sample.             |
 | `CODE_OF_CONDUCT.md` | Code of Conduct information.            |
@@ -30,7 +30,7 @@ This sample demonstrates how to protect a Node.js web API with Azure AD v2.0 usi
 | `package.json`    | Package manifest for npm.                   |
 | `README.md`       | This README file.                          |
 | `SECURITY.md`     | Security disclosures.                      |
-| `server.js`     | Implements a simple Node server to api endpoint(s).  |
+| `index.js`     | Implements a simple Node server to api endpoint(s).  |
 
 ## Steps to Run
 
@@ -49,9 +49,9 @@ npm install && npm update
 ```
 
 4. Configure your environmental parameters:
-   1. Open `apiConfig.js`.
-   2. Replace the string "Enter_the_Application_Id_Here" with your app/client ID on AAD Portal.
-   3. Replace the string "Enter_the_Metadata_Endpoint_Here" with your OpenID Connect metadata document url on the AAD Portal.
+   1. Open `config.js`.
+   2. Replace the string "Enter_the_Application_Id_Here" with your app/client ID on AAD Portal. `e.g. 21312343-2323121-34342-32311`
+   3. Replace the string "Enter_the_Metadata_Endpoint_Here" with your OpenID Connect metadata document url on the AAD Portal. `e.g. https://login.microsoftonline.com/<Tenant ID or Name>`
 
 5. Run the Web API! By default it will run on `http://localhost:5000`
 

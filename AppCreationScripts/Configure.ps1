@@ -197,7 +197,7 @@ Function ConfigureApplications
 
 
    # Update config file for 'service'
-   $configFile = $pwd.Path + "\..\apiConfig.js"
+   $configFile = $pwd.Path + "\..\config.js"
    Write-Host "Updating the sample code ($configFile)"
    $dictionary = @{ "clientID" = $serviceAadApplication.AppId;"identityMetadata" = "https://login.microsoftonline.com/"+$tenantName };
    UpdateTextFile -configFilePath $configFile -dictionary $dictionary
