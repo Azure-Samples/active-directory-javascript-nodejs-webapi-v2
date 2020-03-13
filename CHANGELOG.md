@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 13/03/2020
+
+* `apiConfig.js` file renamed to `config.js`.
+
 ## 3/03/2020
 
 * Dependencies updated.
