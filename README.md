@@ -30,14 +30,13 @@ This sample demonstrates how to protect a Node.js web API with Azure AD v2.0 usi
 | `package.json`    | Package manifest for npm.                   |
 | `README.md`       | This README file.                          |
 | `SECURITY.md`     | Security disclosures.                      |
-| `index.js`     | Implements a simple Node server to api endpoint(s).  |
 
 ## Steps to Run
 
 1. Clone the code.
 
 ```console
-git clone https://github.com/Azure-Samples/active-directory-javascript-nodejs-webapi-v2
+git clone https://github.com/Azure-Samples/active-directory-javascript-nodejs-webapi-v2.git
 ```
 
 2. Make sure you've installed [Node.js](https://nodejs.org/en/download/).
