@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "express": "^4.14.0",
-    "morgan": "^1.7.0",
+    "morgan": "^1.10.0",
     "passport": "^0.3.2",
     "passport-azure-ad": "^4.2.1"
   },
@@ -33,6 +33,6 @@
   },
   "homepage": "https://github.com/Azure-Samples/active-directory-javascript-nodejs-webapi-v2#readme",
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.4"
   }
 }
