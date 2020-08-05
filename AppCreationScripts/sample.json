@@ -2,7 +2,7 @@
     "Sample": {
       "Title": "A sample demonstrating how to protect a Node.js web API with Azure AD v2.0 using the Passport.js library.",
       "Level": 200,
-      "Client": "Node.js Web App",
+      "Client": "JavaScript SPA",
       "Service": "Node.js Web Api",
       "RepositoryUrl": "active-directory-javascript-nodejs-webapi-v2",
       "Endpoint": "AAD v2.0"
