@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## 09/30/2020
+
+* Updated token validation.
+* Revised `README.md`.
+* Config file renamed to `auth.json`.
+
 ## 08/05/2020
 
 * Added issue & PR templates.

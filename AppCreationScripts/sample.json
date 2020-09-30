@@ -14,13 +14,13 @@
         "Kind": "WebApi",
         "HomePage": "http://localhost:5000/",
         "ReplyUrls": "http://localhost:5000/",
-        "Audience": "AzureADMultipleOrgs"
+        "Audience": "AzureADMyOrg"
       }
     ],
     "CodeConfiguration": [
       {
         "App": "service",
-        "SettingKind": "Text",
+        "SettingKind": "JSON",
         "SettingFile": "\\..\\config.js",
         "Mappings": [
           {
@@ -28,8 +28,12 @@
             "value": ".AppId"
           },
           {
-            "key": "identityMetadata",
-            "value": "\"https://login.microsoftonline.com/\"+$tenantName"
+            "key": "tenantID",
+            "value": "$tenantId"
+          },
+          {
+            "key": "audience",
+            "value": ".AppId"
           }
         ]
       }
