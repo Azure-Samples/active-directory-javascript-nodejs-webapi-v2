@@ -208,7 +208,7 @@ Function ConfigureApplications
 
 
    # Update config file for 'service'
-   $configFile = $pwd.Path + "\..\config.js"
+   $configFile = $pwd.Path + "\..\config.json"
    Write-Host "Updating the sample code ($configFile)"
    $dictionary = @{ "clientID" = $serviceAadApplication.AppId;"tenantID" = $tenantId;"audience" = $serviceAadApplication.AppId };
    UpdateTextFile -configFilePath $configFile -dictionary $dictionary

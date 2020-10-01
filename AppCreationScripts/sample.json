@@ -21,7 +21,7 @@
       {
         "App": "service",
         "SettingKind": "JSON",
-        "SettingFile": "\\..\\config.js",
+        "SettingFile": "\\..\\config.json",
         "Mappings": [
           {
             "key": "clientID",
