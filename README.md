@@ -47,13 +47,12 @@ You will need a **client** application for calling the Web API. Choose:
 
 | File/folder       | Description                                |
 |-------------------|--------------------------------------------|
-| `AppCreationScripts`   | Contains automation scripts for Powershell users (can be safely removed if desired).|
+| `AppCreationScripts`   | Contains automation scripts for app registration. |
 | `process.json`   | Contains configuration parameters for logging via Bunyan.  |
 | `index.js`   | Main application logic resides here.                     |
-| `auth.json`   | Contains configuration parameters for the sample. |
+| `config.json`   | Contains configuration parameters for the sample. |
 | `.gitignore`      | Defines what to ignore at commit time.      |
 | `CHANGELOG.md`    | List of changes to the sample.             |
-| `CODE_OF_CONDUCT.md` | Code of Conduct information.            |
 | `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
 | `LICENSE`         | The license for the sample.                |
 | `package.json`    | Package manifest for npm.                   |
@@ -147,7 +146,7 @@ The first thing that we need to do is to declare the unique [resource](https://d
    - For this sample, accept the proposed Application ID URI (api://{clientId}) by selecting **Save**.
 1. All Apis have to publish a minimum of one [scope](https://docs.microsoft.com/azure/active-directory/develop/v2-oauth2-auth-code-flow#request-an-authorization-code) for the client's to obtain an access token successfully. To publish a scope, follow the following steps:
    - Select **Add a scope** button open the **Add a scope** screen and Enter the values as indicated below:
-        - For **Scope name**, use `demo.read`.
+        - For **Scope name**, use `access_as_user`.
         - Select **Admins and users** options for **Who can consent?**
         - For **Admin consent display name** type `Access active-directory-javascript-nodejs-webapi-v2`
         - For **Admin consent description** type `Allows the app to access active-directory-javascript-nodejs-webapi-v2 as the signed-in user.`
@@ -220,7 +219,7 @@ There is one web project in this sample. To deploy it to **Azure App Services**,
 #### Create and publish `active-directory-javascript-nodejs-webapi-v2` to an Azure App Services
 
 1. Sign in to the [Azure portal](https://portal.azure.com).
-1. Click `Create a resource` in the top left-hand corner, select **Web** --> **Web App**, and give your web site a name, for example, `active-directory-javascript-nodejs-webapi-v2-contoso.azurewebsites.net`.
+1. Click `Create a resource` in the top left-hand corner, select **Web** --> **Web App**, and give your web site a name, for example, `active-directory-javascript-nodejs-webapi-v2.azurewebsites.net`.
 1. Next, select the `Subscription`, `Resource Group`, `App service plan and Location`. `OS` will be **Windows** and `Publish` will be **Code**.
 1. Click `Create` and wait for the App Service to be created.
 1. Once you get the `Deployment succeeded` notification, then click on `Go to resource` to navigate to the newly created App service.
@@ -233,7 +232,7 @@ There is one web project in this sample. To deploy it to **Azure App Services**,
 1. Navigate back to to the [Azure portal](https://portal.azure.com).
 In the left-hand navigation pane, select the **Azure Active Directory** service, and then select **App registrations (Preview)**.
 1. In the resulting screen, select the `active-directory-javascript-nodejs-webapi-v2` application.
-1. From the *Branding* menu, update the **Home page URL**, to the address of your service, for example [https://active-directory-javascript-nodejs-webapi-v2-contoso.azurewebsites.net](https://active-directory-javascript-nodejs-webapi-v2-contoso.azurewebsites.net). Save the configuration.
+1. From the *Branding* menu, update the **Home page URL**, to the address of your service, for example [https://active-directory-javascript-nodejs-webapi-v2.azurewebsites.net](https://active-directory-javascript-nodejs-webapi-v2.azurewebsites.net). Save the configuration.
 1. Add the same URL in the list of values of the *Authentication -> Redirect URIs* menu. If you have multiple redirect URIs, make sure that there a new entry using the App service's URI for each redirect URI.
 
 ## More information
@@ -257,6 +256,7 @@ In the left-hand navigation pane, select the **Azure Active Directory** service,
 - [Use MSAL.js to work with Azure AD B2C](https://docs.microsoft.com/azure/active-directory/develop/msal-b2c-overview)
 
 - [MSAL code samples](https://docs.microsoft.com/azure/active-directory/develop/sample-v2-code)
+
 For more information about how OAuth 2.0 protocols work in this scenario and other scenarios, see [Authentication Scenarios for Azure AD](https://docs.microsoft.com/azure/active-directory/develop/authentication-flows-app-scenarios).
 
 ## Community Help and Support

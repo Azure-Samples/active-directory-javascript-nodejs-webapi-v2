@@ -1,19 +1,19 @@
 const express = require("express");
 const morgan = require("morgan");
 const passport = require("passport");
-const auth = require('./auth');
+const config = require('./config');
 
 const BearerStrategy = require('passport-azure-ad').BearerStrategy;
 
 const options = {
-    identityMetadata: `https://${auth.authority}/${auth.tenantID}/${auth.version}/${auth.discovery}`,
-    issuer: `https://${auth.authority}/${auth.tenantID}/${auth.version}`,
-    clientID: auth.clientID,
-    audience: auth.audience,
-    validateIssuer: auth.validateIssuer,
-    passReqToCallback: auth.passReqToCallback,
-    loggingLevel: auth.loggingLevel,
-    scope: auth.scope
+    identityMetadata: `https://${config.metadata.authority}/${config.credentials.tenantID}/${config.metadata.version}/${config.metadata.discovery}`,
+    issuer: `https://${config.metadata.authority}/${config.credentials.tenantID}/${config.metadata.version}`,
+    clientID: config.credentials.clientID,
+    audience: config.credentials.audience,
+    validateIssuer: config.settings.validateIssuer,
+    passReqToCallback: config.settings.passReqToCallback,
+    loggingLevel: config.settings.loggingLevel,
+    scope: config.resource.scope
 };
 
 const bearerStrategy = new BearerStrategy(options, (token, done) => {

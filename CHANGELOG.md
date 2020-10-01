@@ -4,7 +4,6 @@
 
 * Updated token validation.
 * Revised `README.md`.
-* Config file renamed to `auth.json`.
 
 ## 08/05/2020
 
@@ -15,10 +14,6 @@
 * Corrected instructions for `IdentityMetadata` in `config.js`.
 * Reorganized the `README.md`.
 * Updated `morgan` and `nodemon` packages.
-
-## 03/13/2020
-
-* `apiConfig.js` file renamed to `config.js`.
 
 ## 03/03/2020
 
