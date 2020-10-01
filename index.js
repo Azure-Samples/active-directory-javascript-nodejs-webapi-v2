@@ -38,7 +38,7 @@ app.use((req, res, next) => {
 });
 
 // API endpoint exposed
-app.get("/hello",
+app.get("/api",
     passport.authenticate('oauth-bearer', {session: false}),
     (req, res) => {
         console.log('Validated claims: ', req.authInfo);
