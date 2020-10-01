@@ -10,7 +10,7 @@ urlFragment: active-directory-javascript-nodejs-webapi-v2
 description: "This sample demonstrates a JavaScript SPA application calling a Node.js Web Api that is secured using Azure AD"
 ---
 
-# A sample demonstrating how to protect a Node.js web API with Azure AD using the Passport.js library
+# A sample demonstrating how to protect a Node.js web API with the Identity Platform using the Passport.js library
 
  1. [Overview](#overview)
  1. [Scenario](#scenario)
@@ -29,9 +29,9 @@ description: "This sample demonstrates a JavaScript SPA application calling a No
 
 ## Overview
 
-This sample demonstrates [how to protect a Node.js Web API](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-expose-web-apis) with [Microsoft identity platform](https://docs.microsoft.com/azure/active-directory/develop/) and [Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis) using the [passport-azure-ad](https://github.com/AzureAD/passport-azure-ad) library.
+This sample demonstrates [how to protect a Node.js Web API](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-expose-web-apis) with the [Microsoft identity platform](https://docs.microsoft.com/azure/active-directory/develop/) and [Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis) using the [passport-azure-ad](https://github.com/AzureAD/passport-azure-ad) library.
 
-You will need a **client** application for calling the Web API. Choose:
+You will need a **client** application for calling the Web API. Choose either of the following:
 
 - [JavaScript Single-page Application calling a custom Web API with MSAL.js 2.x using the auth code flow with PKCE](https://github.com/Azure-Samples/ms-identity-javascript-callapi).
 - [Angular Single-page Application calling a custom Web API with MSAL-Angular using the implicit flow](https://github.com/Azure-Samples/ms-identity-javascript-angular-callapi)
@@ -178,9 +178,24 @@ Run the Web API! By default it will run on `http://localhost:5000`
     npm start
 ```
 
+When you start the Web API from Visual Studio, depending on the browser you use, you'll get:
+
+- an empty web page (case with Microsoft Edge)
+- or an error HTTP 401 (case with Chrome)
+  
 ## Explore the sample
 
-Call this web API from your client application. Upon an authorized call, the web API will respond by:
+To call this web API from a client application;
+
+1. Make sure that the Client app is registered on the same tenant as this API
+2. Locate  the client app's registration screen, click on the **API Permissions** blade in the left to open the page where we add access to the APIs that your application needs.
+    - Click the **Add a permission** button and then,
+    - Ensure that the **My APIs** tab is selected.
+    - In the list of APIs, select the API **active-directory-javascript-nodejs-webapi-v2**.
+    - In the **Delegated permissions** section, select the **access_as_user** in the list. Use the search box if necessary.
+    - Click on the **Add permissions** button at the bottom.
+  
+3. USe the steps provided in the client app sample's documentation to sign-in a user and make a call to this web API from your client application. Upon an authorized call, the web API will respond by:
 
 ```javascript
       res.status(200).json({
