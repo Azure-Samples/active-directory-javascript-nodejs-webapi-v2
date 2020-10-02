@@ -14,7 +14,12 @@
         "Kind": "WebApi",
         "HomePage": "http://localhost:5000/",
         "ReplyUrls": "http://localhost:5000/",
-        "Audience": "AzureADMyOrg"
+        "Audience": "AzureADMyOrg",
+        "ManualSteps": [
+          {
+            "Comment": "Navigate to the Manifest page, find the property 'accessTokenAcceptedVersion' and set it to '2'"
+          }
+        ]
       }
     ],
     "CodeConfiguration": [

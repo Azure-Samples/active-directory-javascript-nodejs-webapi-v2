@@ -171,7 +171,7 @@ Open the project in your IDE (like Visual Studio or Visual Studio Code) to confi
 
 ## Running the sample
 
-Run the Web API! By default it will run on `http://localhost:5000`
+Run the Web API! By default it will run on `http://localhost:5000/api`
 
 ```console
     cd active-directory-javascript-nodejs-webapi-v2
@@ -199,7 +199,7 @@ To call this web API from a client application;
 
 ```javascript
       res.status(200).json({
-         'displayName': req.authInfo['displayName'],
+         'name': req.authInfo['preferred_username'],
          'issued-by': req.authInfo['iss'],
          'issued-for': req.authInfo['aud'],
          'scope': req.authInfo['scp']
