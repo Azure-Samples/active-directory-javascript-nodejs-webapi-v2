@@ -7,10 +7,10 @@ products:
   - azure-active-directory  
 name: A sample demonstrating how to protect a Node.js web API with Azure AD v2.0 using the Passport.js library.
 urlFragment: active-directory-javascript-nodejs-webapi-v2
-description: "This sample demonstrates a JavaScript SPA application calling a Node.js Web Api that is secured using Azure AD"
+description: "This sample demonstrates how to protect a Node.js Web API that is secured using Azure AD"
 ---
 
-# A sample demonstrating how to protect a Node.js web API with the Identity Platform using the Passport.js library
+# A sample demonstrating how to protect a Node.js web API with the Microsoft identity platform using the Passport.js library
 
  1. [Overview](#overview)
  1. [Scenario](#scenario)
@@ -180,26 +180,26 @@ Run the Web API! By default it will run on `http://localhost:5000/api`
     npm start
 ```
 
-When you start the Web API from Visual Studio, depending on the browser you use, you'll get:
+When you start the Web API, depending on the browser you use, you'll get:
 
 - an empty web page (case with Microsoft Edge)
 - or an error HTTP 401 (case with Chrome)
   
 ## Explore the sample
 
-To call this web API from a client application;
+To call this web API from a client application:
 
-1. Make sure that the Client app is registered on the same tenant as this API
+1. Make sure that the client app is registered on the same tenant as this API.
 2. Locate  the client app's registration screen, click on the **API Permissions** blade in the left to open the page where we add access to the APIs that your application needs.
     - Click the **Add a permission** button and then,
     - Ensure that the **My APIs** tab is selected.
     - In the list of APIs, select the API **active-directory-javascript-nodejs-webapi-v2**.
     - In the **Delegated permissions** section, select the **access_as_user** in the list. Use the search box if necessary.
     - Click on the **Add permissions** button at the bottom.
-3. Update the config of the client app to point it to this Web API
+3. Update the config of the client app to point it to this Web API:
    1. for example, in [this](https://github.com/Azure-Samples/ms-identity-javascript-callapi), open the `App\apiConfig.js` file . Then:
-      1. Find the key `Enter_the_Web_Api_Uri_Here` and replace the existing value with the coordinates of this web API, i.e. `http://localhost:5000`.
-      2. Find the key `Enter_the_Web_Api_Scope_Here` and replace the existing value with the scopes for this web API, like `api://e767d418-b80b-4568-9754-557f40697fc5/access_as_user`. You can copy this from the **Expose an API** blade of this Web APIs registration
+      1. Find the key `Enter_the_Web_Api_Uri_Here` and replace the existing value with the coordinates of this web API, i.e. `http://localhost:5000/api`.
+      2. Find the key `Enter_the_Web_Api_Scope_Here` and replace the existing value with the scopes for this web API, like `api://e767d418-b80b-4568-9754-557f40697fc5/access_as_user`. You can copy this from the **Expose an API** blade of this Web APIs registration.
   
 4. Use the steps provided in the client app sample's documentation to run the app, sign-in a user and make a call to this web API from your client application. Upon an authorized call, the web API will respond by:
 
