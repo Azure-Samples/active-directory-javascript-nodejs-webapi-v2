@@ -36,6 +36,8 @@ You will need a **client** application for calling the Web API. Choose either of
 - [JavaScript Single-page Application calling a custom Web API with MSAL.js 2.x using the auth code flow with PKCE](https://github.com/Azure-Samples/ms-identity-javascript-callapi).
 - [Angular Single-page Application calling a custom Web API with MSAL-Angular using the implicit flow](https://github.com/Azure-Samples/ms-identity-javascript-angular-callapi)
 
+For best results, configure you client app in parallel with configuring this API sample.
+
 ## Scenario
 
 1. The client application uses the [Microsoft Authentication Library for JavaScript (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js) to sign-in a user and obtain a JWT [Access Token](https://docs.microsoft.com/azure/active-directory/develop/access-tokens) from **Azure AD**.
@@ -194,8 +196,12 @@ To call this web API from a client application;
     - In the list of APIs, select the API **active-directory-javascript-nodejs-webapi-v2**.
     - In the **Delegated permissions** section, select the **access_as_user** in the list. Use the search box if necessary.
     - Click on the **Add permissions** button at the bottom.
+3. Update the config of the client app to point it to this Web API
+   1. for example, in [this](https://github.com/Azure-Samples/ms-identity-javascript-callapi), open the `App\apiConfig.js` file . Then:
+      1. Find the key `Enter_the_Web_Api_Uri_Here` and replace the existing value with the coordinates of this web API, i.e. `http://localhost:5000`.
+      2. Find the key `Enter_the_Web_Api_Scope_Here` and replace the existing value with the scopes for this web API, like `api://e767d418-b80b-4568-9754-557f40697fc5/access_as_user`. You can copy this from the **Expose an API** blade of this Web APIs registration
   
-3. USe the steps provided in the client app sample's documentation to sign-in a user and make a call to this web API from your client application. Upon an authorized call, the web API will respond by:
+4. Use the steps provided in the client app sample's documentation to run the app, sign-in a user and make a call to this web API from your client application. Upon an authorized call, the web API will respond by:
 
 ```javascript
       res.status(200).json({
