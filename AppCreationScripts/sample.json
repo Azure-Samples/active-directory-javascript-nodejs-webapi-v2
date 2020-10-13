@@ -13,7 +13,6 @@
         "Name": "active-directory-javascript-nodejs-webapi-v2",
         "Kind": "WebApi",
         "HomePage": "http://localhost:5000/",
-        "ReplyUrls": "http://localhost:5000/",
         "Audience": "AzureADMyOrg",
         "ManualSteps": [
           {

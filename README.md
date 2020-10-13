@@ -4,13 +4,13 @@ languages:
   - javascript
 products:
   - nodejs
-  - azure-active-directory  
-name: A sample demonstrating how to protect a Node.js web API with Azure AD v2.0 using the Passport.js library.
+  - azure-active-directory
+  - microsoft-identity-platform
 urlFragment: active-directory-javascript-nodejs-webapi-v2
 description: "This sample demonstrates how to protect a Node.js Web API that is secured using Azure AD"
 ---
 
-# A sample demonstrating how to protect a Node.js web API with the Microsoft identity platform using the Passport.js library
+# A sample demonstrating how to protect a Node.js web API with the Microsoft identity platform
 
  1. [Overview](#overview)
  1. [Scenario](#scenario)
@@ -205,12 +205,14 @@ To call this web API from a client application:
 
 ```javascript
       res.status(200).json({
-         'name': req.authInfo['preferred_username'],
+         'name': req.authInfo['name'],
          'issued-by': req.authInfo['iss'],
          'issued-for': req.authInfo['aud'],
          'scope': req.authInfo['scp']
       });
 ```
+
+![Overview](./ReadmeFiles/screenshot.png)
 
 > :information_source: Did the sample not work for you as expected? Then please reach out to us using the [GitHub Issues](../../../../issues) page.
 
@@ -239,6 +241,8 @@ There is one web project in this sample. To deploy it to **Azure App Services**,
 
 #### Create and publish `active-directory-javascript-nodejs-webapi-v2` to an Azure App Services
 
+> :information_source: If you would like to use **VS Code Azure Tools** extension for deployment, [watch the tutorial](https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-azure-app-service-node-01) offered by Microsoft Docs.
+
 1. Sign in to the [Azure portal](https://portal.azure.com).
 1. Click `Create a resource` in the top left-hand corner, select **Web** --> **Web App**, and give your web site a name, for example, `active-directory-javascript-nodejs-webapi-v2.azurewebsites.net`.
 1. Next, select the `Subscription`, `Resource Group`, `App service plan and Location`. `OS` will be **Windows** and `Publish` will be **Code**.
@@ -246,7 +250,7 @@ There is one web project in this sample. To deploy it to **Azure App Services**,
 1. Once you get the `Deployment succeeded` notification, then click on `Go to resource` to navigate to the newly created App service.
 1. Once the web site is created, locate it in the **Dashboard** and click it to open **App Services** **Overview** screen.
 
-> :information_source: If you would like to use **VS Code Azure Tools** extension for deployment, [watch the tutorial](https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-azure-app-service-node-01) offered by Microsoft Docs.
+> :warning: After deployment, navigate to the **CORS** blade on the portal and enable it. Once you do, add your **client** application's domain.
 
 ##### Update the Azure AD app registration for `active-directory-javascript-nodejs-webapi-v2`
 
