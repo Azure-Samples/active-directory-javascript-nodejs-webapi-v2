@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## 09/30/2020
+
+* Updated token validation.
+* Revised `README.md`.
+
 ## 08/05/2020
 
 * Added issue & PR templates.
@@ -9,10 +14,6 @@
 * Corrected instructions for `IdentityMetadata` in `config.js`.
 * Reorganized the `README.md`.
 * Updated `morgan` and `nodemon` packages.
-
-## 03/13/2020
-
-* `apiConfig.js` file renamed to `config.js`.
 
 ## 03/03/2020
 

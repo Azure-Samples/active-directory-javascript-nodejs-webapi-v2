@@ -13,23 +13,31 @@
         "Name": "active-directory-javascript-nodejs-webapi-v2",
         "Kind": "WebApi",
         "HomePage": "http://localhost:5000/",
-        "ReplyUrls": "http://localhost:5000/",
-        "Audience": "AzureADMultipleOrgs"
+        "Audience": "AzureADMyOrg",
+        "ManualSteps": [
+          {
+            "Comment": "Navigate to the Manifest page, find the property 'accessTokenAcceptedVersion' and set it to '2'"
+          }
+        ]
       }
     ],
     "CodeConfiguration": [
       {
         "App": "service",
-        "SettingKind": "Text",
-        "SettingFile": "\\..\\config.js",
+        "SettingKind": "JSON",
+        "SettingFile": "\\..\\config.json",
         "Mappings": [
           {
             "key": "clientID",
             "value": ".AppId"
           },
           {
-            "key": "identityMetadata",
-            "value": "\"https://login.microsoftonline.com/\"+$tenantName"
+            "key": "tenantID",
+            "value": "$tenantId"
+          },
+          {
+            "key": "audience",
+            "value": ".AppId"
           }
         ]
       }
