@@ -10,7 +10,7 @@ urlFragment: active-directory-javascript-nodejs-webapi-v2
 description: "This sample demonstrates how to protect a Node.js Web API that is secured using Azure AD"
 ---
 
-# A sample demonstrating how to protect a Node.js web API with the Microsoft identity platform
+# Protect a Node.js web API with Microsoft identity platform
 
  1. [Overview](#overview)
  1. [Scenario](#scenario)
