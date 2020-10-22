@@ -205,16 +205,13 @@ To call this web API from a client application:
 
 ```javascript
       res.status(200).json({
-         'name': req.authInfo['name'],
-         'issued-by': req.authInfo['iss'],
-         'issued-for': req.authInfo['aud'],
-         'scope': req.authInfo['scp']
+         'name': req.authInfo['name']
       });
 ```
 
 ![Overview](./ReadmeFiles/screenshot.png)
 
-> :information_source: Did the sample not work for you as expected? Then please reach out to us using the [GitHub Issues](../../../../issues) page.
+> :information_source: How did we do? Consider [sharing your experience with us](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR73pcsbpbxNJuZCMKN0lURpURUk5V0o5RExFRjVZWlhDMjhGSzVNTlM5RiQlQCN0PWcu)
 
 ## About the code
 
