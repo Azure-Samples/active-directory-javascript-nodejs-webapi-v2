@@ -31,10 +31,12 @@ description: "This sample demonstrates how to protect a Node.js Web API that is 
 
 This sample demonstrates [how to protect a Node.js Web API](https://docs.microsoft.com/azure/active-directory/develop/quickstart-configure-app-expose-web-apis) with the [Microsoft identity platform](https://docs.microsoft.com/azure/active-directory/develop/) and [Azure Active Directory (Azure AD)](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis) using the [passport-azure-ad](https://github.com/AzureAD/passport-azure-ad) library.
 
-You will need a **client** application for calling the Web API. Choose either of the following:
+You will need a **client** application for calling the web API. For a web API sample that is coupled with a client app, see: [JavaScript Single-page application & Node.js web API Tutorial](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/3-Authorization-II/3-1-call-api)
 
-- [JavaScript Single-page Application calling a custom Web API with MSAL.js 2.x using the auth code flow with PKCE](https://github.com/Azure-Samples/ms-identity-javascript-callapi).
-- [Angular Single-page Application calling a custom Web API with MSAL-Angular using the implicit flow](https://github.com/Azure-Samples/ms-identity-javascript-angular-callapi)
+Alternatively, you may modify the following samples to call this web API:
+
+- [JavaScript Single-page Application with MSAL.js 2.x using the auth code flow with PKCE](https://github.com/Azure-Samples/ms-identity-javascript-v2).
+- [Angular Single-page application with MSAL-Angular using the implicit flow](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-angular)
 
 For best results, configure you client app in parallel with configuring this API sample.
 
