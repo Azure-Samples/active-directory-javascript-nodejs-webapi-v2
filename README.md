@@ -33,12 +33,12 @@ This sample demonstrates [how to protect a Node.js Web API](https://docs.microso
 
 You will need a **client** application for calling the web API. For a web API sample that is coupled with a client app, see: [JavaScript Single-page application & Node.js web API Tutorial](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/3-Authorization-II/3-1-call-api)
 
-Alternatively, you may modify the following samples to call this web API:
+Alternatively, you may modify the following samples to call this web API (this requires some familiarity, so follow the tutorial above first):
 
 - [JavaScript Single-page Application with MSAL.js 2.x using the auth code flow with PKCE](https://github.com/Azure-Samples/ms-identity-javascript-v2).
 - [Angular Single-page application with MSAL-Angular using the implicit flow](https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-angular)
 
-For best results, configure you client app in parallel with configuring this API sample.
+For best results, configure your client app in parallel with configuring this API sample.
 
 ## Scenario
 
