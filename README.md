@@ -199,7 +199,7 @@ To call this web API from a client application:
     - In the **Delegated permissions** section, select the **access_as_user** in the list. Use the search box if necessary.
     - Click on the **Add permissions** button at the bottom.
 3. Update the config of the client app to point it to this Web API:
-   1. For example, in [this](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/3-Authorization-II/3-1-call-api), open the `App\apiConfig.js` file . Then:
+   1. For example, in [this](https://github.com/Azure-Samples/ms-identity-javascript-tutorial/tree/main/3-Authorization-II/1-call-api), open the `App\apiConfig.js` file . Then:
       1. Find the key `Enter_the_Web_Api_Uri_Here` and replace the existing value with the coordinates of this web API, i.e. `http://localhost:5000/api`.
       2. Find the key `Enter_the_Web_Api_Scope_Here` and replace the existing value with the scopes for this web API, like `api://e767d418-b80b-4568-9754-557f40697fc5/access_as_user`. You can copy this from the **Expose an API** blade of this Web APIs registration.
   
